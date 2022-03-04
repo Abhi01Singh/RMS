@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Registration
+
+@{ ViewBag.Title = "Log In"; }
+
+<h2>Login</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            @Html.Label("Email:")
+            @Html.TextBoxFor(u => u.Email, new { Class = "form-control" })
+        </div>
+        <div>
+            @Html.Label("Password:")
+            @Html.PasswordFor(u => u.Password, new { Class = "form-control" })
+        </div>
+        <input type="submit" value="Login" class="btn btn-danger" />
+    </div>
+    <div>
+        @{ if (ViewBag.error != null)
+                            {
+            <p class="text-danger">@ViewBag.error</p> } }
+    </div>
+</div>}
+</div>
+
